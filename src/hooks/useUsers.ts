@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { type User } from '../types'
+import { getUsers } from '../services/users'
 
 export function useUsers () {
 	const initialUsers = useRef<User[]>([])
@@ -8,8 +9,7 @@ export function useUsers () {
 	const [users, setUsers] = useState<User[]>([])
 
 	useEffect(() => {
-		fetch('https://randomuser.me/api/?results=100')
-			.then(res => res.json())
+		getUsers()
 			.then(data => {
 				setUsers(data.results)
 				initialUsers.current = data.results

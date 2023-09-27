@@ -10,7 +10,6 @@ export function useFilters (users: User[]) {
 	}
 
 	const filterUsers = useMemo(() => {
-		console.log('Filter')
 		return countryFilter !== null && countryFilter.length > 0
 			? [...users].filter((u) => {
 				return u.location.country.toLocaleLowerCase().includes(countryFilter)

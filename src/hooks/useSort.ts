@@ -15,9 +15,7 @@ export function useSort (filter: User[]) {
 	}
 
 	const sortUsers = useMemo(() => {
-		if (sortBy === null) {
-			return filter
-		} else if (sortBy === SORT_TYPES.name) {
+		if (sortBy === SORT_TYPES.name) {
 			return [...filter].sort((a, b) => {
 				return a.name.first.toLocaleLowerCase().localeCompare(b.name.first.toLocaleLowerCase())
 			})
@@ -30,6 +28,8 @@ export function useSort (filter: User[]) {
 				return a.location.country.toLocaleLowerCase().localeCompare(b.location.country.toLocaleLowerCase())
 			})
 		}
+
+		return filter
 	}, [filter, sortBy])
 
 	return { sortUsers, handleSortBy }
