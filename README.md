@@ -14,3 +14,5 @@ Los pasos a seguir:
 - [x] Implement a feature that allows the user to filter the data by country.
 - [x] Avoid sorting users again the data when the user is changing filter by country.
 - [x] Sort by clicking on the column header.
+
+Enlace: https://jlfjf91-prueba-tecnica-random-user.netlify.app/
